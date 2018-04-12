@@ -1,0 +1,11 @@
+## Interface: 70300
+## Version: 0.1
+## Title: WoW_Speedrun_Timer
+## Author: Sadrunslive, ConjuredBiscuit
+## Notes: Timer built for speedrunners, by speedrunners.
+## SavedVariables: WoWSpeedrunTimerDB
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
+
+embeds.xml
+WoW_Speedrun_Timer.lua
