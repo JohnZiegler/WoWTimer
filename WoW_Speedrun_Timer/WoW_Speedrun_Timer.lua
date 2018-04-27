@@ -35,7 +35,7 @@ local WOW_HIGHEST_LEVEL = 110; --Initializes the highest level attainable by the
 				startTimeRT = GetSessionTime();
 			
 			else
-				print("Current split for level", UnitLevel("player"))
+				print("Current split for level", UnitLevel("player"), "of", goalLevel)
 				SlashCmdList.TIMERCURRENTTIME()
 			end
 		end

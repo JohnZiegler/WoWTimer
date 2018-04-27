@@ -1,6 +1,6 @@
 ## Title: Speedrun Timer
 ## Interface: 70300
 ## Notes: Timer to help speedrunners.
-## Version: 1.0
+## Version: 0.1
 
 WoW_Speedrun_Timer.lua
