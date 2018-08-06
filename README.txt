@@ -24,3 +24,43 @@ Displays the current "split", and where you are at in the run.
 Known issues:
 Entering instances will destory the timer. Possible fix is to move time collection to global variables that persist through load.
 You are able to change the goal level mid run. Simple fix, just not implemented in this pull.
+
+Current Goals and Status:
+Time from start to goal level (Complete)
+	Determine current level (Complete)
+	Determine when levels are achieved (Complete)
+	Store and calculate elapsed time (Complete)
+	Implement error catch system (Complete)
+Time completion of dungeon clearance (0%)
+	Determine when run begins (Complete)
+	Determine when dungeon completes (0%)
+	Determine when certain bosses are killed (splits) (0%)
+Time completion of raid clearance (0%)
+	Determine when run begins (Complete)
+	Determine when dungeon completes (0%)
+	Determine when certain bosses are killed (splits) (0%)
+Time completion of Death Knight starting zone (0%)
+	Determine when the zone has completed per rules on Speedrun.com/wow (0%)
+Time completion of Worgen starting zone (0%)
+	Determine when the zone has completed per rules on Speedrun.com/wow (0%)
+Time completion of Goblin starting zone (0%)
+	Determine when the zone has completed per rules on Speedrun.com/wow (0%)
+Time completion of dungeon sets (0%)
+	Determine when run begins (Complete)
+	Determine when dungeon completes (0%)
+	Determine when certain bosses are killed (splits) (0%)
+	Determine when certain dungeons are complete in the set (splits) (0%)
+Time completion of raid sets (0%)
+	Determine when run begins (Complete)
+	Determine when dungeon completes (0%)
+	Determine when certain bosses are killed (splits) (0%)
+	Determine when certain dungeons are complete in the set (splits) (0%)
+Time completion of Chromie Scenario (0%)
+	Determine when the instance is finished (0%)
+Add translations for all displayed text
+	English (Complete)
+	French (0%)
+	German (0%)
+	Spanish (0%)
+
+

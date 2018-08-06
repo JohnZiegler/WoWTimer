@@ -2,5 +2,6 @@
 ## Interface: 70300
 ## Notes: Timer to help speedrunners.
 ## Version: 0.1
+## SavedVariablesPerCharacter: startTimeIGT, startTimeRT, timerRunning, playerLoaded
 
 WoW_Speedrun_Timer.lua

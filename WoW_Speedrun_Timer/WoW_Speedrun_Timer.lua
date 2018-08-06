@@ -1,12 +1,12 @@
-local startTimeIGT = GetSessionTime(); --Initializes the In Game Timer (IGT) start to the current session timer (Might change to 0)
-local startTimeRT = GetSessionTime(); --Initializes the Real Time (RT) start time to the current session timer (Might change to 0)
+--local startTimeIGT = GetSessionTime(); --Initializes the In Game Timer (IGT) start to the current session timer (Might change to 0)
+--local startTimeRT = GetSessionTime(); --Initializes the Real Time (RT) start time to the current session timer (Might change to 0)
 local endTime = 0; --Initializes the end time variable to 0
 
 local accumTimeIGT = 0; --Initializes the accumulating time variable that is used when the player enters a loading screen. Should not include reloads and moving into instances.
 --local accumTimeRT = 0; --Initializes a back up variable in case a real time one is needed, see above variable
 
-local timerRunning = false; --Initializes the boolean variable to determine if the timmer is currently running or not
-local playerLoaded = false; --Stores if the character has loaded into the game for the first time
+--local timerRunning = false; --Initializes the boolean variable to determine if the timmer is currently running or not
+--local playerLoaded = false; --Stores if the character has loaded into the game for the first time
 
 local goalLevel = 10; --Initializes the variable that will hold the goal level. (Should be made into carryover var?)
 
@@ -33,10 +33,12 @@ local WOW_HIGHEST_LEVEL = 110; --Initializes the highest level attainable by the
 				timerRunning = false;
 				startTimeIGT = GetSessionTime();
 				startTimeRT = GetSessionTime();
+				
+				playerLoaded = false; --resets the loaded state so the player can begin another run
 			
 			else
 				print("Current split for level", UnitLevel("player"), "of", goalLevel)
-				SlashCmdList.TIMERCURRENTTIME()
+				SlashCmdList.SRSPLIT()
 			end
 		end
 	end
@@ -124,8 +126,9 @@ local WOW_HIGHEST_LEVEL = 110; --Initializes the highest level attainable by the
 	-- Slash Commands --
 	--------------------
 	
-SLASH_TIMERGOAL1 = '/timerGoal'; -- SLASH_PRINTTIME1 sets the PRINTTIME1 trigger word to '/printTime', variables must match SLASH_(NAME)(X) where NAME is the message grouping, and X is an incremental counter starting at 1
-	function SlashCmdList.TIMERGOAL(msg) -- sets the /timerGoal function, taking a message as the argument.
+SLASH_SRGOAL1 = '/srGoal'; -- SLASH_PRINTTIME1 sets the PRINTTIME1 trigger word to '/printTime', variables must match SLASH_(NAME)(X) where NAME is the message grouping, and X is an incremental counter starting at 1
+	function SlashCmdList.SRGOAL(msg) -- sets the /timerGoal function, taking a message as the argument.
+
 		if tonumber(msg) then --if the slash command contains a message...
 			if tonumber(msg) > WOW_LOWEST_LEVEL and tonumber(msg) < WOW_HIGHEST_LEVEL then --if the message is a value within the acceptable values (stated at the start of this program)
 				goalLevel = msg --set the goal level to the msg sent
@@ -142,16 +145,17 @@ SLASH_TIMERGOAL1 = '/timerGoal'; -- SLASH_PRINTTIME1 sets the PRINTTIME1 trigger
 				print("Please input a valid integer between 2 and 110 (Ex: 20). Current goal:", goalLevel) --let the user know, and show the current goal level
 			end
 		end
+		
 	end
 	
-SLASH_TIMERREADY1 = '/timerReady'; -- SLASH_READY1 sets the READY1 trigger word to '/timerReady', must match input text exactly
-	function SlashCmdList.TIMERREADY(msg, editbox)
+SLASH_SRREADY1 = '/srReady'; -- SLASH_READY1 sets the READY1 trigger word to '/timerReady', must match input text exactly
+	function SlashCmdList.SRREADY(msg, editbox)
 		playerLoaded = true; --shows that the player is loaded and ready to goal
 		print("Timer is ready. Timer will begin on first input.")
 	end
 	
-SLASH_TIMERCURRENTTIME1 = '/timerCurrentTime'; --SLASH_CURRENTIME1 sets the CURRENTTIME1 trigger to '/timerCurrentTime', and will display the current time, or split, of the run
-	function SlashCmdList.TIMERCURRENTTIME() 
+SLASH_SRSPLIT1 = '/srSplit'; --SLASH_CURRENTIME1 sets the CURRENTTIME1 trigger to '/timerCurrentTime', and will display the current time, or split, of the run
+	function SlashCmdList.SRSPLIT() 
 		if timerRunning == true then --if the timer is currently running
 			local timeTaken = difftime(GetSessionTime(), startTimeIGT) + accumTimeIGT --set the current time taken to the difference between the current and start times, adding the accumulated times (For real time)
 			print("Your Real Time: " .. floor(timeTaken/3600) .. " hours, " .. floor(timeTaken/60) .. " minutes, " .. timeTaken%60 .. " seconds.")
@@ -162,8 +166,8 @@ SLASH_TIMERCURRENTTIME1 = '/timerCurrentTime'; --SLASH_CURRENTIME1 sets the CURR
 		end
 	end
 	
-SLASH_TIMERSTOP1 = '/timerStop';
-	function SlashCmdList.TIMERSTOP(msg, editbox)
+SLASH_SRSTOP1 = '/srStop';
+	function SlashCmdList.SRSTOP(msg, editbox)
 		print("Timer has been stopped.")
 				timerRunning = false; --set the timer running to false, since the timer is being stopped
 				playerLoaded = false; --sets the playerLoaded to false, allowing the user to restart should requirements be met
