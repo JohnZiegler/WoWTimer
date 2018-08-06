@@ -1,7 +1,8 @@
 ## Title: Speedrun Timer
 ## Interface: 70300
-## Notes: Timer to help speedrunners.
-## Version: 0.1
-## SavedVariablesPerCharacter: startTimeIGT, startTimeRT, timerRunning, playerLoaded
+## Notes: Timer to help speed running the leveling process.
+## Version: 1.0
+## Author: @Sadrunslive
+## SavedVariablesPerCharacter: startTimeIGT, accumTimeIGT, runStatus
 
 WoW_Speedrun_Timer.lua
