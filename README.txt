@@ -10,7 +10,7 @@ Currently no translations are available. They will be introduced moving forward.
 The available slash commands:
 
 /srGoal (goal level)
-Will display the current goal level, if you wish to change the level goal, you can set that by adding the desired level (Ex: "/timeGoal 20" would set my goal level to 20).
+Will display the current goal level, if you wish to change the level goal, you can set that by adding the desired level (Ex: "/srGoal 20" would set my goal level to 20).
 
 /srReady
 Will begin loading the timer, this MUST be done before runs if they wish to be recognized.
