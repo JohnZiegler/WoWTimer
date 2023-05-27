@@ -1,4 +1,3 @@
-Follow me @Sadrunslive
 Add the WoW_Speedrun_Timer folder to your Addons folder.
 To join in further, join us at the WoW Speedrun Discord: https://discord.gg/KMkpFVt
 Version: 1.0
